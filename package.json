@@ -1,6 +1,6 @@
 {
   "name": "text-to-link",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "npm module to find URLs in a string of text and hyperlink them",
   "main": "index.js",
   "scripts": {
