@@ -1,0 +1,23 @@
+{
+  "name": "text-to-link",
+  "version": "1.0.0",
+  "description": "npm module to find URLs in a string of text and hyperlink them",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "pre-commit": "standard",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:urbanhire/text-to-link.git"
+  },
+  "author": "Urbanhire <dev@urbanhire.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/urbanhire/text-to-link/issues"
+  },
+  "homepage": "https://github.com/urbanhire/text-to-link",
+  "devDependencies": {
+    "pre-commit": "^1.1.3"
+  }
+}
