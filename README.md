@@ -2,6 +2,8 @@
 
 text-to-link is a small JavaScript and npm module that takes a string of text, finds URLs within it, and hyperlinks them.
 
+#### [DEMO](https://webdeveloper.pro/demo/text-to-link/demo/demo.html)
+
 ### Basic Usage
 
 text-to-link adds an autoLink() method to JavaScript's String prototype,
