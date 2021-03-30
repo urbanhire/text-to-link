@@ -14,7 +14,7 @@ module.exports = (content, options) => {
   let pattern
   let value
 
-  pattern = /(^|[\s\n]|<[A-Za-z]*\/?>)((?:https?|ftp):\/\/[\-A-Z0-9+\u0026\u2019@#\/%?=()~_|!:,.]*[\-A-Z0-9+\u0026@#\/%=~()_|])/gi
+  pattern = /(^|[\s\n]|<[A-Za-zА-Яа-я]*\/?>)((?:https?|ftp):\/\/[\-A-ZА-Я0-9+\u0026\u2019@#\/%?=()~_|!:,.]*[\-A-ZА-Я0-9+\u0026@#\/%=~()_|])/gi
 
   let optionsExists = false
   for (let i in options) {
