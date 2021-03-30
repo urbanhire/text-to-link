@@ -1,29 +1,37 @@
 'use strict'
 
-module.exports = (content, opt) => {
+/**
+ * Converts raw links to clickable links in content
+ * 
+ * @param {string} content 
+ * @param {{ callback: function, target: string }} [options]
+ * @returns {string}
+ */
+module.exports = (content, options) => {
   let callback
   let key
   let linkAttributes
-  let option
-  let options
   let pattern
   let value
 
-  options = opt
-  pattern = /(^|[\s\n]|<[A-Za-z]*\/?>)((?:https?|ftp):\/\/[\-A-Z0-9+\u0026\u2019@#\/%?=()~_|!:,.]*[\-A-Z0-9+\u0026@#\/%=~()_|])/gi
+  pattern = /(^|[\s\n]|<[A-Za-zА-Яа-я]*\/?>)((?:https?|ftp):\/\/[\-A-ZА-Я0-9+\u0026\u2019@#\/%?=()~_|!:,.]*[\-A-ZА-Я0-9+\u0026@#\/%=~()_|])/gi
 
-  if (!(options.length > 0)) {
+  let optionsExists = false
+  for (let i in options) {
+    optionsExists = true
+    break
+  }
+  if (!optionsExists) {
     return content.replace(pattern, "$1<a href='$2'>$2</a>")
   }
 
-  option = options[0]
-  callback = option['callback']
+  callback = options['callback']
   linkAttributes = ((() => {
     let results
 
     results = []
-    for (key in option) {
-      value = option[key]
+    for (key in options) {
+      value = options[key]
       if (key !== 'callback') {
         results.push(' ' + key + '="' + value + '"')
       }

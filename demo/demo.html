@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo of text-to-link</title>
+  <script src="dist/main.js"></script>
+  <script>
+    const textTolink = window.textTolink;
+    const dysplayDemo = window.dysplayDemo;
+  </script>
+
+  <style>
+    body {
+      margin: 50px;
+    }
+
+    img {
+      max-width: 200px;
+    }
+
+    p {
+      background: #EEE;
+      padding: 10px;
+      border: 1px solid #CCC;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>text-to-link</h1>
+
+  <h2>Basic Usage</h2>
+
+  <script>
+    dysplayDemo(
+      `This is a link to Google http://google.com`,
+
+      textTolink(
+        `This is a link to Google http://google.com`
+      )
+    );
+  </script>
+
+
+  <h2>Additional Options</h2>
+
+  <script>
+    dysplayDemo(
+      "This is a link to Google http://google.com",
+
+      textTolink(
+        "This is a link to Google http://google.com",
+        {
+          target: "_blank", rel: "nofollow", id: "1"
+        }
+      )
+    )
+  </script>
+
+  <h3>Callback</h3>
+
+  <script>
+    dysplayDemo(
+      "This is a link to image https://i.gifer.com/3otv.gif",
+
+      textTolink(
+        "This is a link to image https://i.gifer.com/3otv.gif",
+        {
+          callback: url => {
+            return /\.(gif|png|jpe?g)$/i.test(url) ? '<img src="' + url + '">' : null;
+          }
+        }
+      )
+    )
+  </script>
+  
+</body>
+</html>
